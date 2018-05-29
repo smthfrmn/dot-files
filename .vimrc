@@ -14,10 +14,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim', {'do' : 'make'}
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mtth/scratch.vim'
+Plugin 'dracula/vim'
+Plugin 'Valloric/YouCompleteMe' 
 
 " language-related Plugins
 Plugin 'hynek/vim-python-pep8-indent'
@@ -33,7 +36,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'racer-rust/vim-racer'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'dracula/vim'
 Plugin 'nvie/vim-flake8'
 
 " Plug 'cakebaker/scss-syntax.vim'
@@ -139,7 +141,8 @@ if executable("ag")
 endif
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python'
 " let g:ycm_rust_src_path = '~/rustc-1.11.0/src/'
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
@@ -158,6 +161,9 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_html_checkers = ['tidy']
 let g:syntastic_html_tidy_exec = 'tidy'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_flake8_post_args="--max-line-length=120"
+
 
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
